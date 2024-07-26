@@ -1,2 +1,2 @@
 # Parachute-game
- A simple 3D parachute game made using moderngl.
+ A simple 2D parachute game made using pygame.
