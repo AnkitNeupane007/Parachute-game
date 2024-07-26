@@ -5,7 +5,7 @@ def end_screen(clock, home_screen_callback):
         Button("Home", 300, 300, WHITE, lambda: home_screen_callback(clock)),
     ]
 
-    while True:#gg
+    while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
