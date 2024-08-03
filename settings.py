@@ -11,6 +11,10 @@ font = pygame.font.Font(None, 36)
 home_screen_image = pygame.image.load(os.path.join('objects/home/', 'home_screen.jpeg'))
 home_screen_image = pygame.transform.scale(home_screen_image, (800, 600))
 
+# Level background image
+level_background = pygame.image.load(os.path.join('objects/home', 'level.png'))
+level_background = pygame.transform.scale(level_background, (800, 600))
+
 # Screen dimensions
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
@@ -20,27 +24,47 @@ pygame.display.set_caption("2D Parachute Game")
 # Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
-GREEN = (0, 255, 0)
-RED = (255, 0, 0)
+GREEN = (165, 237, 140)
+RED = (249, 110, 110)
 YELLOW = (255, 255, 0)
 PURPLE = (128, 0, 128)
 BLUE = (0, 0, 255)
+GRAY = (128, 128, 128)
+ORANGE =(237, 176, 70)
+LIGHT_WHITE = (240, 240, 240)
 
 # Parachute settings
 PARACHUTE_WIDTH = 50
 PARACHUTE_HEIGHT = 50
 PARACHUTE_HORIZONTAL_SPEED = 5
 
+# Parachutes available
+PARACHUTE_1 = pygame.image.load(os.path.join('objects/parachute/pngs', 'white.png'))
+PARACHUTE_2 = pygame.image.load(os.path.join('objects/parachute/pngs', 'army_green.png'))
+PARACHUTE_3 = pygame.image.load(os.path.join('objects/parachute/pngs', 'army_canvas.png'))
+
+PARACHUTE_4 = pygame.image.load(os.path.join('objects/parachute/pngs', 'purple_yellow.png'))
+# PARACHUTE_5 = pygame.image.load(os.path.join('objects/parachute/pngs', 'multicolor.png'))
+
 class Button:
-    def __init__(self, text, x, y, color, callback):
+    def __init__(self, text, x, y, color, callback, image=None):
         self.text = text
-        self.rect = pygame.Rect(x, y, 200, 50)
+        self.rect = pygame.Rect(x, y, 125, 45)
         self.callback = callback
         self.color = color
+        self.image = image
+        if image:
+            self.image = pygame.transform.scale(image, (30, 30))
+            self.image_rect = self.image.get_rect()
+            self.image_rect.topleft = (x + self.rect.width + 10, y + 7)
+        
+    def display(self, screen):
+        pygame.draw.rect(screen, self.color, self.rect)
+
 
     def draw(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)
-        text_surf = font.render(self.text, True, BLACK)
+        text_surf = font.render(self.text, True, LIGHT_WHITE)
         screen.blit(text_surf, (self.rect.x + 20, self.rect.y + 10))
 
     def check_click(self, event):

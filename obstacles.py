@@ -16,3 +16,8 @@ class Obstacle:
         self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
         # screen.blit(self.image, (self.x, self.y))
         pygame.draw.rect(screen, self.color, self.rect)
+        
+    def detect_collision(self, parachute):
+        if self.rect.colliderect(parachute.rect):
+            return True
+        return False

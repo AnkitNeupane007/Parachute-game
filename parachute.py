@@ -3,8 +3,8 @@ import os
 from settings import *
 
 class Parachute:
-    def __init__(self, speed, left_key, right_key):
-        self.original_image = pygame.image.load(os.path.join('objects/parachute/pngs', 'white.png'))
+    def __init__(self, speed, left_key, right_key, parachute_image):
+        self.original_image = parachute_image
         self.image = pygame.transform.scale(self.original_image, (PARACHUTE_WIDTH, PARACHUTE_HEIGHT))
         self.rect = self.image.get_rect()
         self.rect.x = SCREEN_WIDTH // 2 - self.rect.width // 2
