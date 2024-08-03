@@ -1,4 +1,5 @@
 from settings import *
+import sys
 
 def end_screen(clock, home_screen_callback):
     buttons = [

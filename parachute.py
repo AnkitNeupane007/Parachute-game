@@ -29,3 +29,6 @@ class Parachute:
         if self.rect.y > SCREEN_HEIGHT - self.rect.height:
             return True
         return False
+    
+    def wind(self, wind_speed):
+        self.rect.x += wind_speed
