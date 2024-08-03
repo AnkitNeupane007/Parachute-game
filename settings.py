@@ -13,7 +13,7 @@ home_screen_image = pygame.transform.scale(home_screen_image, (800, 600))
 
 # Screen dimensions
 SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 720
+SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("2D Parachute Game")
 
