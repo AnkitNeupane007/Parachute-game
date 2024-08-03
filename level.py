@@ -23,6 +23,7 @@ def level_1(clock, home_screen_callback):
                 pygame.quit()
                 sys.exit()
 
+        parachute1.wind(2)
         parachute1.update()
         parachute2.update()
 
