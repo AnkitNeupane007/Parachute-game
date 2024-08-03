@@ -26,9 +26,14 @@ class Parachute:
         screen.blit(self.image, self.rect.topleft)
         
     def detect_out_of_bounds(self):
-        if self.rect.y > SCREEN_HEIGHT - self.rect.height:
+        if (self.rect.y > SCREEN_HEIGHT - self.rect.height):
             return True
         return False
     
-    def wind(self, wind_speed):
-        self.rect.x += wind_speed
+    def wind(self, wind_speed, wind_direction):
+        if wind_direction ==  'left':
+            if self.rect.x > 0:
+                self.rect.x -= wind_speed
+        else:
+            if self.rect.x < SCREEN_WIDTH - self.rect.width:
+                self.rect.x += wind_speed
