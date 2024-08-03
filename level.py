@@ -9,13 +9,25 @@ def level_1(clock, home_screen_callback):
     parachute1 = Parachute(2, pygame.K_LEFT, pygame.K_RIGHT)
     parachute2 = Parachute(2, pygame.K_a, pygame.K_d)
     
-    obstacles = [Obstacle(RED),
-                 Obstacle(RED),
-                 Obstacle(RED)]
+    # Red: Tree
+    # Blue: Rock
+    # Yellow: Bird
+    # Green: Building
+    # Purple: Cloud
+
+    obstacles = [Obstacle(RED),  
+                 Obstacle(BLUE),                   
+                 Obstacle(YELLOW),
+                 Obstacle(GREEN),
+                 Obstacle(PURPLE),
+                 Obstacle(BLUE)]
     
-    obstacles_coordinates = [(200, 300),
+    obstacles_coordinates = [(100, 300),
+                             (480, 250),
                              (250, 350),
-                             (450, 550)]
+                             (450, 500),
+                             (550, 100),
+                             (650, 400)]
 
     while True:
         for event in pygame.event.get():
@@ -23,7 +35,6 @@ def level_1(clock, home_screen_callback):
                 pygame.quit()
                 sys.exit()
 
-        parachute1.wind(2)
         parachute1.update()
         parachute2.update()
 
