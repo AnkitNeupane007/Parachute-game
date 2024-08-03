@@ -103,7 +103,7 @@ def level_2(clock, home_screen_callback):
         parachute2.wind(1.1, 'left')
         parachute2.update()
 
-        if parachute1.detect_out_of_bounds() or parachute2.detect_out_of_bounds():
+        if parachute1.detect_out_of_bounds() and parachute2.detect_out_of_bounds():
             end_screen(clock, home_screen_callback)
 
         screen.fill(WHITE)
