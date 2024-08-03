@@ -3,12 +3,12 @@ import os
 from settings import *
 
 class Parachute:
-    def __init__(self, speed, left_key, right_key, parachute_image):
+    def __init__(self, speed, x, y, left_key, right_key, parachute_image):
         self.original_image = parachute_image
         self.image = pygame.transform.scale(self.original_image, (PARACHUTE_WIDTH, PARACHUTE_HEIGHT))
         self.rect = self.image.get_rect()
-        self.rect.x = SCREEN_WIDTH // 2 - self.rect.width // 2
-        self.rect.y = 0
+        self.rect.x = x
+        self.rect.y = y
         self.speed = speed
         self.left_key = left_key
         self.right_key = right_key

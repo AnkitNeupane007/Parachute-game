@@ -15,6 +15,18 @@ home_screen_image = pygame.transform.scale(home_screen_image, (800, 600))
 level_background = pygame.image.load(os.path.join('objects/home', 'level.png'))
 level_background = pygame.transform.scale(level_background, (800, 600))
 
+# Sprite scale
+
+SPRITE_HEIGHT = 50
+SPRITE_WIDTH = 50
+
+# Sprite images
+bird_sp = pygame.image.load(os.path.join('objects/obstacles', 'Bird.png'))
+building_sp = pygame.image.load(os.path.join('objects/obstacles', 'Building.png'))
+cloud_sp = pygame.image.load(os.path.join('objects/obstacles', 'Cloud.png'))
+rock_sp = pygame.image.load(os.path.join('objects/obstacles', 'Rock.png'))
+xmas_sp = pygame.image.load(os.path.join('objects/obstacles', 'Xmas.png'))
+
 # Screen dimensions
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
