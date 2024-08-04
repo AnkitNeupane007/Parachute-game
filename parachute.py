@@ -27,7 +27,7 @@ class Parachute:
     def draw(self, screen):
         screen.blit(self.image, (self.rect.x-7, self.rect.y - 4))  # Draw the parachute image
         # For debugging
-        pygame.draw.rect(screen, (255, 0, 0), self.rect, 2)  # Draw a red rectangle with a width of 2 pixels
+        # pygame.draw.rect(screen, (255, 0, 0), self.rect, 2)  # Draw a red rectangle with a width of 2 pixels
 
         
     def detect_out_of_bounds(self):

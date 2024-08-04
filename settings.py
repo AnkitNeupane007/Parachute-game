@@ -60,6 +60,8 @@ PARACHUTE_3 = pygame.image.load(os.path.join('objects/parachute/pngs', 'army_can
 PARACHUTE_4 = pygame.image.load(os.path.join('objects/parachute/pngs', 'purple_yellow.png'))
 PARACHUTE_5 = pygame.image.load(os.path.join('objects/parachute/pngs', 'multicolor.png'))
 
+PARACHUTE_100 = pygame.image.load(os.path.join('objects/parachute/pngs', 'Parachute100.png'))
+
 class Button:
     def __init__(self, text, x, y, width, height, color, callback, image=None):
         self.text = text
