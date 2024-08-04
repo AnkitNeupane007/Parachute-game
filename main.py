@@ -6,9 +6,9 @@ from level import start_level_1, start_level_2, start_level_3
 
 def home_screen(clock):
     buttons = [
-        Button("Level 1", 300, 200, ORANGE, lambda: start_level_1(clock, home_screen)),
-        Button("Level 2", 300, 300, ORANGE, lambda: start_level_2(clock, home_screen)),
-        Button("Level 3", 300, 400, ORANGE, lambda: start_level_3(clock, home_screen)),
+        Button("Level 1", 110, 500, 125, 50, ORANGE, lambda: start_level_1(clock, home_screen)),
+        Button("Level 2", 335, 500, 125, 50, ORANGE, lambda: start_level_2(clock, home_screen)),
+        Button("Level 3", 560, 500, 125, 50, ORANGE, lambda: start_level_3(clock, home_screen)),
     ]
 
     while True:
