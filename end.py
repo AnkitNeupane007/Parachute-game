@@ -3,7 +3,7 @@ import sys
 
 def end_screen(clock, home_screen_callback, color):
     buttons = [
-        Button("Home", 300, 300, GRAY, lambda: home_screen_callback(clock)),
+        Button("Home", 300, 300, 125, 45, GRAY, lambda: home_screen_callback(clock)),
     ]
 
     while True:

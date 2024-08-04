@@ -9,6 +9,8 @@ class Parachute:
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
+        self.rect.width = PARACHUTE_WIDTH - 13
+        self.rect.height = PARACHUTE_HEIGHT -10
         self.speed = speed
         self.left_key = left_key
         self.right_key = right_key
@@ -23,7 +25,10 @@ class Parachute:
             self.rect.x += PARACHUTE_HORIZONTAL_SPEED
 
     def draw(self, screen):
-        screen.blit(self.image, self.rect.topleft)
+        screen.blit(self.image, (self.rect.x-7, self.rect.y - 4))  # Draw the parachute image
+        # For debugging
+        pygame.draw.rect(screen, (255, 0, 0), self.rect, 2)  # Draw a red rectangle with a width of 2 pixels
+
         
     def detect_out_of_bounds(self):
         if (self.rect.y > SCREEN_HEIGHT - self.rect.height):
@@ -34,6 +39,6 @@ class Parachute:
         if wind_direction ==  'left':
             if self.rect.x > 0:
                 self.rect.x -= wind_speed
-        else:
+        elif wind_direction == 'right':
             if self.rect.x < SCREEN_WIDTH - self.rect.width:
                 self.rect.x += wind_speed
