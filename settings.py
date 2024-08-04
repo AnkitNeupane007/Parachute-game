@@ -7,13 +7,19 @@ pygame.init()
 # Fonts
 font = pygame.font.Font(None, 36)
 
+# Screen dimensions
+SCREEN_WIDTH = 1200
+SCREEN_HEIGHT = 720
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("2D Parachute Game")
+
 # Home screen image
 home_screen_image = pygame.image.load(os.path.join('objects/home/', 'home_screen.png'))
-home_screen_image = pygame.transform.scale(home_screen_image, (800, 600))
+home_screen_image = pygame.transform.scale(home_screen_image, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Level background image
 level_background = pygame.image.load(os.path.join('objects/home', 'level.png'))
-level_background = pygame.transform.scale(level_background, (800, 600))
+level_background = pygame.transform.scale(level_background, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Sprite scale
 SPRITE_HEIGHT = 50
@@ -25,12 +31,6 @@ building_sp = pygame.image.load(os.path.join('objects/obstacles', 'Building.png'
 skull2_sp = pygame.image.load(os.path.join('objects/obstacles', 'Skull2.png'))
 bomb_sp = pygame.image.load(os.path.join('objects/obstacles', 'Bomb.png'))
 xmas_sp = pygame.image.load(os.path.join('objects/obstacles', 'Xmas.png'))
-
-# Screen dimensions
-SCREEN_WIDTH = 800
-SCREEN_HEIGHT = 600
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("2D Parachute Game")
 
 # Colors
 WHITE = (255, 255, 255)

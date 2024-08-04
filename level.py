@@ -9,15 +9,9 @@ import random
 from random import randint
 
 def level_1(clock, home_screen_callback, parachute_image):
-    parachute1 = Parachute(1.5,600, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
-    parachute2 = Parachute(1.5, 100, 0, pygame.K_a, pygame.K_d, parachute_image)
+    parachute1 = Parachute(1.5, SCREEN_WIDTH * 0.75, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
+    parachute2 = Parachute(1.5, SCREEN_WIDTH * 0.125, 0, pygame.K_a, pygame.K_d, parachute_image)
     
-    # Red: Xmas
-    # Blue: Bomb
-    # Yellow: Skull-2
-    # Green: Building
-    # Purple: Skull-1
-
     obstacles = [Obstacle(xmas_sp),  
                  Obstacle(bomb_sp),                   
                  Obstacle(skull2_sp),
@@ -25,12 +19,12 @@ def level_1(clock, home_screen_callback, parachute_image):
                  Obstacle(skull1_sp),
                  Obstacle(bomb_sp)]
     
-    obstacles_coordinates = [(100, 300),
-                             (480, 250),
-                             (250, 350),
-                             (450, 500),
-                             (550, 100),
-                             (650, 400)]
+    obstacles_coordinates = [(SCREEN_WIDTH * 0.125, SCREEN_HEIGHT * 0.5),
+                             (SCREEN_WIDTH * 0.6, SCREEN_HEIGHT * 0.4167),
+                             (SCREEN_WIDTH * 0.3125, SCREEN_HEIGHT * 0.5833),
+                             (SCREEN_WIDTH * 0.5625, SCREEN_HEIGHT * 0.8333),
+                             (SCREEN_WIDTH * 0.6875, SCREEN_HEIGHT * 0.1667),
+                             (SCREEN_WIDTH * 0.8125, SCREEN_HEIGHT * 0.6667)]
 
     while True:
         for event in pygame.event.get():
@@ -61,9 +55,7 @@ def level_1(clock, home_screen_callback, parachute_image):
         clock.tick(60)
 
 def level_2(clock, home_screen_callback, parachute_image):
-    clock = pygame.time.Clock()
-    parachute1 = Parachute(1.4, randint(20, 300), 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
-    # parachute2 = Parachute(0, 100, 0, pygame.K_a, pygame.K_d, parachute_image)
+    parachute1 = Parachute(1.4, random.uniform(SCREEN_WIDTH * 0.025, SCREEN_WIDTH * 0.375), 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
 
     obstacles = [
         Obstacle(xmas_sp),    # Tree
@@ -88,25 +80,25 @@ def level_2(clock, home_screen_callback, parachute_image):
     ]
     
     obstacles_coordinates = [
-        (50, 100),   # Tree
-        (350, 300),  # Tree
-        (350, 100),  # Tree
-        (250, 200),  # Bomb
-        (550, 300),  # Bomb
-        (120, 450),  # Bomb
-        (250, 500),  # Bomb
-        (350, 400),  # Skull-2
-        (750, 400),  # Skull-2
-        (550, 100),  # Skull-2
-        (650, 200),  # Skull-2
-        (200, 350),  # Building
-        (20, 550),  # Building
-        (400, 550),  # Building
-        (650, 550),  # Building
-        (100, 250),  # Skull-1
-        (20, 350),  # Skull-1
-        (550, 450),  # Additional Tree
-        (420, 200),   # Additional Skull-1
+        (SCREEN_WIDTH * 0.0625, SCREEN_HEIGHT * 0.1667),   # Tree
+        (SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.5),  # Tree
+        (SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.1667),  # Tree
+        (SCREEN_WIDTH * 0.3125, SCREEN_HEIGHT * 0.3333),  # Bomb
+        (SCREEN_WIDTH * 0.6875, SCREEN_HEIGHT * 0.5),  # Bomb
+        (SCREEN_WIDTH * 0.15, SCREEN_HEIGHT * 0.75),  # Bomb
+        (SCREEN_WIDTH * 0.3125, SCREEN_HEIGHT * 0.8333),  # Bomb
+        (SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.6667),  # Skull-2
+        (SCREEN_WIDTH * 0.9375, SCREEN_HEIGHT * 0.6667),  # Skull-2
+        (SCREEN_WIDTH * 0.6875, SCREEN_HEIGHT * 0.1667),  # Skull-2
+        (SCREEN_WIDTH * 0.8125, SCREEN_HEIGHT * 0.3333),  # Skull-2
+        (SCREEN_WIDTH * 0.25, SCREEN_HEIGHT * 0.5833),  # Building
+        (SCREEN_WIDTH * 0.025, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.8125, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.125, SCREEN_HEIGHT * 0.4167),  # Skull-1
+        (SCREEN_WIDTH * 0.025, SCREEN_HEIGHT * 0.5833),  # Skull-1
+        (SCREEN_WIDTH * 0.6875, SCREEN_HEIGHT * 0.75),  # Additional Tree
+        (SCREEN_WIDTH * 0.525, SCREEN_HEIGHT * 0.3333),   # Additional Skull-1
     ]
 
     direction = random.choice(wind_direction)
@@ -139,8 +131,8 @@ def level_2(clock, home_screen_callback, parachute_image):
         clock.tick(60)
 
 def level_3(clock, home_screen_callback, parachute_image):
-    parachute1 = Parachute(0.5, 600, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
-    parachute2 = Parachute(0.5, 100, 0, pygame.K_a, pygame.K_d, parachute_image)
+    parachute1 = Parachute(0.5, SCREEN_WIDTH * 0.75, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
+    parachute2 = Parachute(0.5, SCREEN_WIDTH * 0.125, 0, pygame.K_a, pygame.K_d, parachute_image)
 
     obstacles = [
         Obstacle(xmas_sp),    # Tree
@@ -161,21 +153,21 @@ def level_3(clock, home_screen_callback, parachute_image):
     ]
 
     obstacles_coordinates = [
-        (80, 280),  # Tree
-        (300, 350),  # Tree
-        (400, 150),  # Bomb
-        (480, 260),  # Bomb
-        (150, 420),  # Skull-2
-        (520, 450),  # Skull-2
-        (650, 150),  # Skull-2
-        (100, 550),  # Building
-        (350, 550),  # Building
-        (650, 550),  # Building
-        (50, 150),   # Skull-1
-        (230, 200),  # Skull-1
-        (680, 300),  # Skull-1
-        (20, 450),  # Skull-1
-        (730, 430),  # Skull-1
+        (SCREEN_WIDTH * 0.1, SCREEN_HEIGHT * 0.4667),  # Tree
+        (SCREEN_WIDTH * 0.375, SCREEN_HEIGHT * 0.5833),  # Tree
+        (SCREEN_WIDTH * 0.5, SCREEN_HEIGHT * 0.25),  # Bomb
+        (SCREEN_WIDTH * 0.6, SCREEN_HEIGHT * 0.4333),  # Bomb
+        (SCREEN_WIDTH * 0.1875, SCREEN_HEIGHT * 0.7),  # Skull-2
+        (SCREEN_WIDTH * 0.65, SCREEN_HEIGHT * 0.75),  # Skull-2
+        (SCREEN_WIDTH * 0.8125, SCREEN_HEIGHT * 0.25),  # Skull-2
+        (SCREEN_WIDTH * 0.125, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.8125, SCREEN_HEIGHT * 0.9167),  # Building
+        (SCREEN_WIDTH * 0.0625, SCREEN_HEIGHT * 0.25),   # Skull-1
+        (SCREEN_WIDTH * 0.2875, SCREEN_HEIGHT * 0.3333),  # Skull-1
+        (SCREEN_WIDTH * 0.85, SCREEN_HEIGHT * 0.5),  # Skull-1
+        (SCREEN_WIDTH * 0.025, SCREEN_HEIGHT * 0.75),  # Skull-1
+        (SCREEN_WIDTH * 0.9125, SCREEN_HEIGHT * 0.7167),  # Skull-1
     ]
     
     while True:
@@ -210,9 +202,9 @@ def level_3(clock, home_screen_callback, parachute_image):
 def start_level_1(clock, home_screen_callback):
     button_size = 80
     buttons = [
-        Button("1", 350, 150, button_size, button_size, GRAY, lambda: level_1(clock, home_screen_callback, PARACHUTE_1), PARACHUTE_1),
-        Button("2", 350, 250, button_size, button_size, LIGHT_WHITE, lambda: level_1(clock, home_screen_callback, PARACHUTE_2), PARACHUTE_2),
-        Button("3", 350, 350, button_size, button_size, RED, lambda: level_1(clock, home_screen_callback, PARACHUTE_3), PARACHUTE_3),
+        Button("1", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.25, button_size, button_size, GRAY, lambda: level_1(clock, home_screen_callback, PARACHUTE_1), PARACHUTE_1),
+        Button("2", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.4167, button_size, button_size, LIGHT_WHITE, lambda: level_1(clock, home_screen_callback, PARACHUTE_2), PARACHUTE_2),
+        Button("3", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.5833, button_size, button_size, RED, lambda: level_1(clock, home_screen_callback, PARACHUTE_3), PARACHUTE_3),
     ]
     
     while True:
@@ -236,9 +228,9 @@ def start_level_1(clock, home_screen_callback):
 def start_level_2(clock, home_screen_callback):
     button_size = 80
     buttons = [
-        Button("4", 350, 150, button_size, button_size, GRAY, lambda: level_2(clock, home_screen_callback, PARACHUTE_4), PARACHUTE_4),
-        Button("5", 350, 250, button_size, button_size, LIGHT_WHITE, lambda: level_2(clock, home_screen_callback, PARACHUTE_5), PARACHUTE_5),
-        # Button("3", 350, 350, button_size, button_size, RED, lambda: level_2(clock, home_screen_callback, PARACHUTE_3), PARACHUTE_3),
+        Button("4", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.25, button_size, button_size, GRAY, lambda: level_2(clock, home_screen_callback, PARACHUTE_4), PARACHUTE_4),
+        Button("5", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.4167, button_size, button_size, LIGHT_WHITE, lambda: level_2(clock, home_screen_callback, PARACHUTE_5), PARACHUTE_5),
+        # Button("3", SCREEN_WIDTH * 0.4375, SCREEN_HEIGHT * 0.5833, button_size, button_size, RED, lambda: level_2(clock, home_screen_callback, PARACHUTE_3), PARACHUTE_3),
     ]
     
     while True:
