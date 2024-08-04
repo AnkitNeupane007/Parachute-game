@@ -155,7 +155,9 @@ def level_3(clock, home_screen_callback, parachute_image):
         Obstacle(building_sp),  # Building
         Obstacle(skull1_sp), # Skull-1
         Obstacle(skull1_sp), # Skull-1
-        Obstacle(skull1_sp)  # Skull-1
+        Obstacle(skull1_sp),  # Skull-1
+        Obstacle(skull1_sp),  # Skull-1
+        Obstacle(bomb_sp),  # Skull-1
     ]
 
     obstacles_coordinates = [
@@ -172,6 +174,8 @@ def level_3(clock, home_screen_callback, parachute_image):
         (50, 150),   # Skull-1
         (230, 200),  # Skull-1
         (680, 300),  # Skull-1
+        (20, 450),  # Skull-1
+        (730, 430),  # Skull-1
     ]
     
     while True:
