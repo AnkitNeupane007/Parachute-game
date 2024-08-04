@@ -9,8 +9,8 @@ import random
 from random import randint
 
 def level_1(clock, home_screen_callback, parachute_image):
-    parachute1 = Parachute(1.2,600, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
-    parachute2 = Parachute(1.2, 100, 0, pygame.K_a, pygame.K_d, parachute_image)
+    parachute1 = Parachute(1.5,600, 0, pygame.K_LEFT, pygame.K_RIGHT, parachute_image)
+    parachute2 = Parachute(1.5, 100, 0, pygame.K_a, pygame.K_d, parachute_image)
     
     # Red: Xmas
     # Blue: Bomb
@@ -44,20 +44,18 @@ def level_1(clock, home_screen_callback, parachute_image):
         parachute1.draw(screen)
         parachute2.draw(screen)
 
-        parachute1.wind(random.uniform(0.3, 0.8), random.choice(wind_direction))
         parachute1.update()
-        parachute2.wind(random.uniform(0.3, 0.8), random.choice(wind_direction))
         parachute2.update()
         
         for obstacle, coord in zip(obstacles, obstacles_coordinates):
             obstacle.draw(coord, screen)
 
         if parachute1.detect_out_of_bounds() and parachute2.detect_out_of_bounds():
-            end_screen(clock, home_screen_callback, GREEN)
+            end_screen(clock, home_screen_callback, GREEN, start_level_1)
             
         for obstacle, coord in zip(obstacles, obstacles_coordinates):
             if obstacle.detect_collision(parachute1) or obstacle.detect_collision(parachute2):
-                end_screen(clock, home_screen_callback, RED)
+                end_screen(clock, home_screen_callback, RED, start_level_1)
 
         pygame.display.flip()
         clock.tick(60)
@@ -131,11 +129,11 @@ def level_2(clock, home_screen_callback, parachute_image):
             obstacle.draw(coord, screen)
 
         if parachute1.detect_out_of_bounds():
-            end_screen(clock, home_screen_callback, GREEN)
+            end_screen(clock, home_screen_callback, GREEN, start_level_2)
             
         for obstacle, coord in zip(obstacles, obstacles_coordinates):
             if obstacle.detect_collision(parachute1):
-                end_screen(clock, home_screen_callback, RED)
+                end_screen(clock, home_screen_callback, RED, start_level_2)
 
         pygame.display.flip()
         clock.tick(60)
@@ -196,11 +194,11 @@ def level_3(clock, home_screen_callback, parachute_image):
             obstacle.draw(coord, screen)
 
         if parachute1.detect_out_of_bounds() and parachute2.detect_out_of_bounds():
-            end_screen(clock, home_screen_callback, GREEN)
+            end_screen(clock, home_screen_callback, GREEN, start_level_3)
             
         for obstacle, coord in zip(obstacles, obstacles_coordinates):
             if obstacle.detect_collision(parachute1) or obstacle.detect_collision(parachute2):
-                end_screen(clock, home_screen_callback, RED)
+                end_screen(clock, home_screen_callback, RED, start_level_3)
 
         pygame.display.flip()
         clock.tick(60)
@@ -258,4 +256,4 @@ def start_level_2(clock, home_screen_callback):
         clock.tick(60)
 
 def start_level_3(clock, home_screen_callback):
-    level_3(clock, home_screen_callback, PARACHUTE_4)
+    level_3(clock, home_screen_callback, PARACHUTE_100)
