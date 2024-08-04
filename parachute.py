@@ -9,8 +9,8 @@ class Parachute:
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
-        self.rect.width = PARACHUTE_WIDTH - 13
-        self.rect.height = PARACHUTE_HEIGHT -10
+        self.rect.width = PARACHUTE_WIDTH - 0.01625 * SCREEN_WIDTH
+        self.rect.height = PARACHUTE_HEIGHT - 0.0167 * SCREEN_HEIGHT
         self.speed = speed
         self.left_key = left_key
         self.right_key = right_key
@@ -25,7 +25,7 @@ class Parachute:
             self.rect.x += PARACHUTE_HORIZONTAL_SPEED
 
     def draw(self, screen):
-        screen.blit(self.image, (self.rect.x-7, self.rect.y - 4))  # Draw the parachute image
+        screen.blit(self.image, (self.rect.x - 0.00875 * SCREEN_WIDTH, self.rect.y - 0.0067 * SCREEN_HEIGHT))  # Draw the parachute image
         # For debugging
         # pygame.draw.rect(screen, (255, 0, 0), self.rect, 2)  # Draw a red rectangle with a width of 2 pixels
 

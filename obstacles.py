@@ -6,11 +6,11 @@ class Obstacle:
     def __init__(self, sp_image):
         self.original_image = sp_image
         self.image = pygame.transform.scale(self.original_image, (SPRITE_WIDTH, SPRITE_HEIGHT))
-        self.height = 50
-        self.width = 50
+        self.height = SPRITE_HEIGHT
+        self.width = SPRITE_WIDTH
         self.rect = self.image.get_rect()
-        self.rect.width = SPRITE_WIDTH - 10
-        self.rect.height = SPRITE_HEIGHT - 10
+        self.rect.width = SPRITE_WIDTH - 0.0125 * SCREEN_WIDTH
+        self.rect.height = SPRITE_HEIGHT - 0.0167 * SCREEN_HEIGHT
 
     def draw(self, coord, screen):
         self.x = coord[0]

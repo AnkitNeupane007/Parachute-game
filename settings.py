@@ -8,7 +8,7 @@ pygame.init()
 font = pygame.font.Font(None, 36)
 
 # Screen dimensions
-SCREEN_WIDTH = 1200
+SCREEN_WIDTH = 1080
 SCREEN_HEIGHT = 720
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("2D Parachute Game")
@@ -22,8 +22,8 @@ level_background = pygame.image.load(os.path.join('objects/home', 'level.png'))
 level_background = pygame.transform.scale(level_background, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Sprite scale
-SPRITE_HEIGHT = 50
-SPRITE_WIDTH = 50
+SPRITE_HEIGHT = 0.0833 * SCREEN_HEIGHT
+SPRITE_WIDTH = 0.0625 * SCREEN_WIDTH
 
 # Sprite images
 skull1_sp = pygame.image.load(os.path.join('objects/obstacles', 'Skull1.png'))
@@ -45,8 +45,8 @@ ORANGE =(237, 176, 70)
 LIGHT_WHITE = (240, 240, 240)
 
 # Parachute settings
-PARACHUTE_WIDTH = 50
-PARACHUTE_HEIGHT = 50
+PARACHUTE_WIDTH = 0.0625 * SCREEN_WIDTH
+PARACHUTE_HEIGHT = 0.0833 * SCREEN_HEIGHT
 PARACHUTE_HORIZONTAL_SPEED = 5
 
 # Wind settings
@@ -59,6 +59,7 @@ PARACHUTE_3 = pygame.image.load(os.path.join('objects/parachute/pngs', 'army_can
 
 PARACHUTE_4 = pygame.image.load(os.path.join('objects/parachute/pngs', 'purple_yellow.png'))
 PARACHUTE_5 = pygame.image.load(os.path.join('objects/parachute/pngs', 'multicolor.png'))
+PARACHUTE_100 = pygame.image.load(os.path.join('objects/parachute/pngs', 'parachute100.png'))
 
 PARACHUTE_100 = pygame.image.load(os.path.join('objects/parachute/pngs', 'Parachute100.png'))
 
