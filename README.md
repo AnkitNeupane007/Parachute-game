@@ -1,6 +1,7 @@
 # Parachute-game
 
 A simple 2D parachute game made using pygame.
+![Gameplay image](Gameplay.png)
 
 ## How to play
 
